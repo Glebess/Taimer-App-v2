@@ -1,0 +1,59 @@
+.div_task_all {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.div_task {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  width: 100%;
+  &:hover {
+    background-color: #3f3e3ea6;
+    border-radius: 10px;
+  }
+}
+.div_task_text {
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--main-gray);
+  width: 100%;
+  margin-left: 5px;
+  height: 40px;
+}
+.div_task_input_field {
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: 0;
+  width: 100%;
+}
+.div_task_input_checkbox {
+  margin: 0;
+  margin-left: 10px;
+  width: 17px;
+  height: 17px;
+}
+.button_task_more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-right: 5px;
+  border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.button_task_more svg {
+  height: 40px;
+  &:hover {
+    fill: white;
+  }
+}

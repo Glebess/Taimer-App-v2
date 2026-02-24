@@ -1,0 +1,57 @@
+.div_new_task_panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  height: 130px;
+  inset: 42.5px 0 auto auto;
+  border: 1px solid var(--main-gray);
+  background-color: var(--main-gray1);
+  border-radius: 10px;
+  z-index: 9999;
+}
+.div_priority_task {
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.div_priority_task button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+    background-color: #ffffff0a;
+  }
+}
+.div_new_task_panel button.active {
+  background-color: #0d0d0e54;
+}
+.div_new_task_panel p {
+  margin: 0;
+  margin-top: 5px;
+  color: #94929283;
+}
+.div_priority_task_svg {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.div_priority_task_svg svg:hover {
+  cursor: pointer;
+}
+.div_line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--main-gray);
+}
+.div_secure {
+  display: flex;
+  padding: 10px;
+}

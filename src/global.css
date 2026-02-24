@@ -1,0 +1,13 @@
+:root {
+  --main-gray: #3a3a3a;
+  --main-gray1: #303030;
+  --main-blue: #0077ff;
+  --main-font: "Nova Square", sans-serif;
+}
+* {
+  font-family: var(--main-font);
+}
+body {
+  margin: 0;
+  padding: 0;
+}
