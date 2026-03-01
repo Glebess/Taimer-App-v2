@@ -1,8 +1,15 @@
 :root {
+  --main-black: #1a1a1a;
+  --main-black1: #252424;
+
   --main-gray: #3a3a3a;
   --main-gray1: #303030;
+  --main-gray2: #5a5959;
+
   --main-blue: #0077ff;
   --main-font: "Nova Square", sans-serif;
+  --padding-5px: 5px;
+  --padding-10px: 10px;
 }
 * {
   font-family: var(--main-font);

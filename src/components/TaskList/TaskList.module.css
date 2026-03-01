@@ -25,6 +25,15 @@
   margin-left: 5px;
   height: 40px;
 }
+.p_title_task {
+  color: white;
+  margin: 0;
+  font-size: 16px;
+}
+.p_title_task_none {
+  color: var(--main-gray2);
+}
+
 .div_task_input_field {
   background-color: transparent;
   color: white;
@@ -56,4 +65,13 @@
   &:hover {
     fill: white;
   }
+}
+.input_edit_task {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  margin: 0;
+  padding: 0;
 }

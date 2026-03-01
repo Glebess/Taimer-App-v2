@@ -11,6 +11,12 @@ function App() {
       taskPriority: "base",
       taskСompleted: false,
     },
+    {
+      taskId: 2,
+      taskTitle: "1111",
+      taskPriority: "base",
+      taskСompleted: false,
+    },
   ]);
   return (
     <div className={styles.main_div}>

@@ -15,6 +15,9 @@ const TasksSector = (props) => {
   const [newTaskCreateNote, setNewTaskCreateNote] = useState([
     { taskPriority: "base", secure: false },
   ]);
+  {
+    console.log(allTasks);
+  }
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
   const handleClickAddTaskPanel = () => {

@@ -1,21 +1,76 @@
 import styles from "./TaskList.module.css";
 import Button from "../../componentsShare/Button";
+import { useEffect, useRef, useState } from "react";
 
 const TaskList = (props) => {
   const { allTasks, setAllTasks } = props;
 
+  const inputRef = useRef(null);
+  const [editingTaskId, setEditingTaskId] = useState(null);
+  const [taskEditText, setTaskEditText] = useState("");
+
+  // Устанавливаем фокус при появлении input
+  useEffect(() => {
+    if (editingTaskId && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [editingTaskId]);
+
+  // Редактирование задачи
+  const handleTaskEdit = (task) => {
+    setEditingTaskId(task.taskId);
+    setTaskEditText(task.taskTitle);
+  };
+
+  // Сохранение изменений
+  const handleSaveTask = (taskId) => {
+    setAllTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.taskId === taskId ? { ...task, taskTitle: taskEditText } : task,
+      ),
+    );
+    setEditingTaskId(null);
+  };
+
+  // Обработка нажатия клавиш
+  const handleKeyDown = (e, taskId) => {
+    if (e.key === "Enter") {
+      handleSaveTask(taskId);
+    } else if (e.key === "Escape") {
+      setEditingTaskId(null);
+    }
+  };
+
   return (
     <div className={styles.div_task_all}>
-      {allTasks.lenght !== 0 ? (
+      {allTasks.length !== 0 ? (
         allTasks.map((task) => {
+          const isEditing = editingTaskId === task.taskId;
+
           return (
             <div key={task.taskId} className={styles.div_task}>
               <input
                 type="checkbox"
                 className={styles.div_task_input_checkbox}
               />
-              <div className={styles.div_task_text}>
-                <p>{task.taskTitle}</p>
+              <div
+                className={styles.div_task_text}
+                onClick={() => !isEditing && handleTaskEdit(task)}
+              >
+                {isEditing ? (
+                  <input
+                    className={styles.input_edit_task}
+                    ref={inputRef}
+                    value={taskEditText}
+                    onChange={(e) => setTaskEditText(e.target.value)}
+                    onBlur={() => handleSaveTask(task.taskId)}
+                    onKeyDown={(e) => handleKeyDown(e, task.taskId)}
+                  />
+                ) : task.taskTitle === "" ? (
+                  <p className={styles.p_title_task_none}>Нет заголовка</p>
+                ) : (
+                  <p className={styles.p_title_task}>{task.taskTitle}</p>
+                )}
               </div>
               <Button
                 className={styles.button_task_more}
@@ -35,9 +90,10 @@ const TaskList = (props) => {
           );
         })
       ) : (
-        <p>1</p>
+        <p>Задач нет</p>
       )}
     </div>
   );
 };
+
 export default TaskList;
