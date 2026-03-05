@@ -41,6 +41,16 @@ const TaskList = (props) => {
     }
   };
 
+  const handleTaskComplate = (taskId) => {
+    setAllTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.taskId === taskId
+          ? { ...task, taskIsСompleted: !task.taskIsСompleted }
+          : task,
+      ),
+    );
+  };
+
   return (
     <div className={styles.div_task_all}>
       {allTasks.length !== 0 ? (
@@ -52,6 +62,9 @@ const TaskList = (props) => {
               <input
                 type="checkbox"
                 className={styles.div_task_input_checkbox}
+                id="task-complate"
+                checked={task.taskIsСompleted}
+                onChange={() => handleTaskComplate(task.taskId)}
               />
               <div
                 className={styles.div_task_text}
@@ -65,6 +78,7 @@ const TaskList = (props) => {
                     onChange={(e) => setTaskEditText(e.target.value)}
                     onBlur={() => handleSaveTask(task.taskId)}
                     onKeyDown={(e) => handleKeyDown(e, task.taskId)}
+                    name="editTask"
                   />
                 ) : task.taskTitle === "" ? (
                   <p className={styles.p_title_task_none}>Нет заголовка</p>

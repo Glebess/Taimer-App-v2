@@ -10,11 +10,22 @@
   height: 40px;
   align-items: center;
   width: 100%;
+  animation-name: taskAppearance;
+  animation-duration: 500ms;
   &:hover {
     background-color: #3f3e3ea6;
     border-radius: 10px;
   }
 }
+@keyframes taskAppearance {
+  from {
+    transform: translateX(-20px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .div_task_text {
   display: flex;
   align-items: center;
@@ -46,6 +57,31 @@
   margin-left: 10px;
   width: 17px;
   height: 17px;
+  appearance: none;
+  position: relative;
+  background: transparent;
+  border-radius: 5px;
+  border: 1.75px solid var(--main-gray);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.div_task_input_checkbox::after {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  font-size: 26px;
+  border-radius: 5px;
+  transform: scale(0);
+  transition: 0.15s;
+}
+.div_task_input_checkbox:checked::after {
+  background-color: white;
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
 }
 .button_task_more {
   display: flex;
@@ -56,6 +92,7 @@
   padding: 0;
   margin-right: 5px;
   border-radius: 10px;
+
   &:hover {
     cursor: pointer;
   }

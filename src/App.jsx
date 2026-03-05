@@ -9,13 +9,13 @@ function App() {
       taskId: 1,
       taskTitle: "1212",
       taskPriority: "base",
-      taskСompleted: false,
+      taskIsСompleted: true,
     },
     {
       taskId: 2,
       taskTitle: "1111",
       taskPriority: "base",
-      taskСompleted: false,
+      taskIsСompleted: false,
     },
   ]);
   return (
