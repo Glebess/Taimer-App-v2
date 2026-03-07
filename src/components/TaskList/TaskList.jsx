@@ -104,7 +104,10 @@ const TaskList = (props) => {
           );
         })
       ) : (
-        <p>Задач нет</p>
+        <div className={styles.div_no_tasks}>
+          <p>Ни одной задачи</p>
+          <p>Это скучно</p>
+        </div>
       )}
     </div>
   );

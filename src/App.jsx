@@ -2,22 +2,30 @@ import Header from "./components/Header/Header";
 
 import styles from "./App.module.css";
 import TasksSector from "./components/TasksSector/TasksSector";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+// {
+//         taskId: Date.now,
+//         taskTitle: "Ваша первая задача",
+//         taskPriority: "base", // high, normal , small
+//         taskIsСompleted: false,
+//       },
 function App() {
-  const [allTasks, setAllTasks] = useState([
-    {
-      taskId: 1,
-      taskTitle: "1212",
-      taskPriority: "base",
-      taskIsСompleted: true,
-    },
-    {
-      taskId: 2,
-      taskTitle: "1111",
-      taskPriority: "base",
-      taskIsСompleted: false,
-    },
-  ]);
+  const [allTasks, setAllTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+      try {
+        return JSON.parse(savedTasks);
+      } catch (error) {
+        console.error("Error load task", error);
+      }
+    }
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(allTasks));
+  }, [allTasks]);
   return (
     <div className={styles.main_div}>
       <Header />

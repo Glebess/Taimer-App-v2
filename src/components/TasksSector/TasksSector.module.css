@@ -19,7 +19,7 @@
   color: white;
   padding-left: 10px;
   border-radius: 10px;
-  background-color: #ffffff0a;
+  background-color: var(--main-bg-gray);
   outline: 0;
   &:focus {
     border: 1px solid #0077ff;

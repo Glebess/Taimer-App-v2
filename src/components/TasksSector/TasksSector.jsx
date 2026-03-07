@@ -26,7 +26,7 @@ const TasksSector = (props) => {
 
   const handleNewTask = () => {
     if (newTaskTitle.trim() === "") {
-      1;
+      alert("Поле задачи не может быть пустым!");
     } else {
       const newTask = {
         taskId: Date.now(),
