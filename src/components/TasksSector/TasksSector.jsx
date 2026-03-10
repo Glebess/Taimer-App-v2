@@ -10,11 +10,8 @@ import TaskList from "../TaskList/TaskList";
 const TasksSector = (props) => {
   const { allTasks, setAllTasks } = props;
 
-  const [priorityTask, setPriorityTask] = useState("base");
+  const [newPriorityTask, setNewPriorityTask] = useState("base");
   const [onShowNewTaskPanel, setOnShowNewTaskPanel] = useState(false);
-  const [newTaskCreateNote, setNewTaskCreateNote] = useState([
-    { taskPriority: "base", secure: false },
-  ]);
   {
     console.log(allTasks);
   }
@@ -31,7 +28,7 @@ const TasksSector = (props) => {
       const newTask = {
         taskId: Date.now(),
         taskTitle: newTaskTitle,
-        taskPriority: "base",
+        taskPriority: newPriorityTask,
         taskCompleted: false,
       };
 
@@ -70,9 +67,8 @@ const TasksSector = (props) => {
 
             <NewTaskMenuPanel
               onShowNewTaskPanel={onShowNewTaskPanel}
-              setNewTaskCreate={setNewTaskCreateNote}
-              setPriorityTask={setPriorityTask}
-              priorityTask={priorityTask}
+              setNewPriorityTask={setNewPriorityTask}
+              newPriorityTask={newPriorityTask}
             />
           </div>
           <Button
@@ -84,7 +80,12 @@ const TasksSector = (props) => {
           />
         </div>
       </div>
-      <TaskList allTasks={allTasks} setAllTasks={setAllTasks} />
+      <TaskList
+        allTasks={allTasks}
+        setAllTasks={setAllTasks}
+        setNewPriorityTask={setNewPriorityTask}
+        newPriorityTask={newPriorityTask}
+      />
     </div>
   );
 };

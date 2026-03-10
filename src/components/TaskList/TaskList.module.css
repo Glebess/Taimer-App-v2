@@ -10,22 +10,46 @@
   height: 40px;
   align-items: center;
   width: 100%;
-  animation-name: taskAppearance;
-  animation-duration: 600ms;
+  margin-right: 5px;
   &:hover {
     background-color: #3f3e3ea6;
     border-radius: 10px;
   }
 }
-@keyframes taskAppearance {
-  from {
-    transform: translateX(-20px);
-  }
-  to {
-    transform: translateX(0);
+.div_completed_task {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  &:hover {
+    background-color: #3f3e3ea6;
+    border-radius: 10px;
   }
 }
-
+.div_completed_task::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  animation-name: taskcompleted;
+  animation-duration: 800ms;
+  transform: scaleX(0);
+  transform-origin: center;
+  border-radius: 10px;
+}
+@keyframes taskcompleted {
+  from {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
 .div_task_text {
   display: flex;
   align-items: center;
@@ -50,7 +74,7 @@
   color: white;
   border: none;
   outline: 0;
-  width: 100%;
+  width: auto;
 }
 .div_task_input_checkbox {
   margin: 0;
@@ -62,7 +86,6 @@
   background: transparent;
   border-radius: 5px;
   border: 1.75px solid var(--main-gray);
-
   &:hover {
     cursor: pointer;
   }
@@ -83,6 +106,9 @@
   transform: scale(1);
   transition: transform 0.2s ease-in-out;
 }
+.div_task_more {
+  position: relative;
+}
 .button_task_more {
   display: flex;
   align-items: center;
@@ -90,9 +116,6 @@
   background-color: transparent;
   border: none;
   padding: 0;
-  margin-right: 5px;
-  border-radius: 10px;
-
   &:hover {
     cursor: pointer;
   }
@@ -111,6 +134,7 @@
   outline: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 .div_no_tasks {
   width: 100%;
@@ -130,19 +154,4 @@
   margin: 0;
   color: var(--main-gray2);
   font-size: 16px;
-}
-
-@keyframes typesAnim {
-  0% {
-    border-color: var(--main-gray);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
-  }
-  50% {
-    border-color: white;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
-  }
-  100% {
-    border-color: var(--main-gray);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
-  }
 }

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 // {
 //         taskId: Date.now,
-//         taskTitle: "Ваша первая задача",
+//         taskTitle: "Образец задачи",
 //         taskPriority: "base", // high, normal , small
 //         taskIsСompleted: false,
 //       },

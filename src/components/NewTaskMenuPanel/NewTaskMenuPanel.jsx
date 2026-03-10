@@ -2,10 +2,10 @@ import Button from "../../componentsShare/Button";
 import styles from "./NewTaskMenuPanel.module.css";
 
 const NewTaskMenuPanel = (props) => {
-  const { onShowNewTaskPanel, priorityTask, setPriorityTask } = props;
+  const { onShowNewTaskPanel, newPriorityTask, setNewPriorityTask } = props;
 
   const getButtonClass = (priority) => {
-    return priorityTask === priority
+    return newPriorityTask === priority
       ? `${styles.active} ${styles[priority]}`
       : "";
   };
@@ -17,7 +17,7 @@ const NewTaskMenuPanel = (props) => {
             <p>Приоритет</p>
             <div className={styles.div_priority_task_svg}>
               <Button
-                onClick={() => setPriorityTask("high")}
+                onClick={() => setNewPriorityTask("high")}
                 className={getButtonClass("high")}
                 children={
                   <svg
@@ -32,7 +32,7 @@ const NewTaskMenuPanel = (props) => {
                 }
               />
               <Button
-                onClick={() => setPriorityTask("normal")}
+                onClick={() => setNewPriorityTask("normal")}
                 className={getButtonClass("normal")}
                 children={
                   <svg
@@ -47,7 +47,7 @@ const NewTaskMenuPanel = (props) => {
                 }
               />
               <Button
-                onClick={() => setPriorityTask("small")}
+                onClick={() => setNewPriorityTask("small")}
                 className={getButtonClass("small")}
                 children={
                   <svg
@@ -63,7 +63,7 @@ const NewTaskMenuPanel = (props) => {
               />
 
               <Button
-                onClick={() => setPriorityTask("base")}
+                onClick={() => setNewPriorityTask("base")}
                 className={getButtonClass("base")}
                 children={
                   <svg
@@ -82,7 +82,6 @@ const NewTaskMenuPanel = (props) => {
           <div className={styles.div_line}></div>
           <div className={styles.div_secure}>
             <p>Закрепить</p>
-            {/* <input type="checkbox"></input> */}
           </div>
         </div>
       ) : null}

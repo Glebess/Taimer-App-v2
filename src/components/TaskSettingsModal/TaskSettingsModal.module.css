@@ -1,0 +1,56 @@
+.div_modal_overlay {
+  background-color: var(--main-black1);
+  z-index: 9999;
+  position: absolute;
+  inset: 35px 0px 0px -180px;
+  height: 100px;
+  width: 199px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--main-gray);
+}
+.div_modal_content {
+  padding: 10px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.div_priority_task {
+  display: flex;
+}
+.div_modal_overlay p {
+  color: #94929283;
+  font-size: 16px;
+  margin: 0;
+}
+.div_priority_task {
+  padding-top: 5px;
+}
+.div_modal_content button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+    background-color: #ffffff0a;
+  }
+}
+.div_modal_contentbutton.active {
+  background-color: #0d0d0e54;
+}
+
+.div_modal_content svg {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.div_modal_content svg:hover {
+  cursor: pointer;
+}

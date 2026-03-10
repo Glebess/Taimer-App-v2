@@ -1,5 +1,6 @@
 import styles from "./TaskList.module.css";
 import Button from "../../componentsShare/Button";
+import TaskSettingsModal from "..//TaskSettingsModal/TaskSettingsModal";
 import { useEffect, useRef, useState } from "react";
 
 const TaskList = (props) => {
@@ -8,15 +9,30 @@ const TaskList = (props) => {
   const inputRef = useRef(null);
   const [editingTaskId, setEditingTaskId] = useState(null);
   const [taskEditText, setTaskEditText] = useState("");
+  const [isTaskSettingsModal, setIsTaskSettingsModal] = useState(false);
+  const [selectedTaskId, setSelectedTaskId] = useState(null);
 
-  // Устанавливаем фокус при появлении input
+  // Фокус при появлении input
   useEffect(() => {
     if (editingTaskId && inputRef.current) {
       inputRef.current.focus();
     }
   }, [editingTaskId]);
 
-  // Редактирование задачи
+  const handleOpenSettings = (taskId) => {
+    setSelectedTaskId(taskId);
+    setIsTaskSettingsModal(!isTaskSettingsModal);
+  };
+
+  const handleEditPriorityTask = (taskId, priority) => {
+    setAllTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.taskId === taskId ? { ...task, taskPriority: priority } : task,
+      ),
+    );
+  };
+
+  // Редактирование заголовка задачи задачи
   const handleTaskEdit = (task) => {
     setEditingTaskId(task.taskId);
     setTaskEditText(task.taskTitle);
@@ -41,7 +57,7 @@ const TaskList = (props) => {
     }
   };
 
-  const handleTaskComplate = (taskId) => {
+  const handleTaskComplete = (taskId) => {
     setAllTasks((prevTasks) =>
       prevTasks.map((task) =>
         task.taskId === taskId
@@ -56,15 +72,21 @@ const TaskList = (props) => {
       {allTasks.length !== 0 ? (
         allTasks.map((task) => {
           const isEditing = editingTaskId === task.taskId;
-
           return (
-            <div key={task.taskId} className={styles.div_task}>
+            <div
+              key={task.taskId}
+              className={
+                task.taskIsСompleted
+                  ? styles.div_completed_task
+                  : styles.div_task
+              }
+            >
               <input
                 type="checkbox"
                 className={styles.div_task_input_checkbox}
                 id="task-complate"
                 checked={task.taskIsСompleted}
-                onChange={() => handleTaskComplate(task.taskId)}
+                onChange={() => handleTaskComplete(task.taskId)}
               />
               <div
                 className={styles.div_task_text}
@@ -86,20 +108,28 @@ const TaskList = (props) => {
                   <p className={styles.p_title_task}>{task.taskTitle}</p>
                 )}
               </div>
-              <Button
-                className={styles.button_task_more}
-                children={
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#7c7b7b"
-                  >
-                    <path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z" />
-                  </svg>
-                }
-              />
+              <div className={styles.div_task_more}>
+                <Button
+                  onClick={() => handleOpenSettings(task.taskId)}
+                  className={styles.button_task_more}
+                  children={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#7c7b7b"
+                    >
+                      <path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z" />
+                    </svg>
+                  }
+                />
+                <TaskSettingsModal
+                  isOpen={isTaskSettingsModal && selectedTaskId === task.taskId}
+                  handleEditPriorityTask={handleEditPriorityTask}
+                  taskId={task.taskId}
+                />
+              </div>
             </div>
           );
         })
