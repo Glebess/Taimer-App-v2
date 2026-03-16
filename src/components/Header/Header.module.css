@@ -1,15 +1,36 @@
 .header_container {
-  width: 60px;
+  width: 50px;
   height: 100vh;
   display: flex;
   align-items: center;
-  padding-left: 5px;
   background-color: #222222;
 }
 .header_div {
-  background-color: var(--main-black);
-  border: 1px solid var(--main-gray);
-  border-radius: 20px;
-  height: 98%;
-  width: 60px;
+  background-color: #222222;
+  /* border: 1px solid var(--main-gray); */
+  height: 100%;
+  width: 50px;
+}
+.header_button_container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.header_button {
+  background-color: transparent;
+  border: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.header_button:first-child {
+  margin-top: 20px;
+}
+.header_button svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff98;
+  &:hover {
+    fill: #ffffffc0;
+  }
 }
