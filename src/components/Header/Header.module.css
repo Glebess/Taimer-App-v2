@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: #222222;
+  background-color: var(--main-black1);
 }
 .header_div {
   box-sizing: border-box;

@@ -6,7 +6,8 @@
   height: 130px;
   inset: 42.5px 0 auto auto;
   border: 1px solid var(--main-gray);
-  background-color: var(--main-black1);
+  background-color: #242424;
+
   border-radius: 10px;
   z-index: 9999;
 }
@@ -36,7 +37,7 @@
 .div_new_task_panel p {
   margin: 0;
   margin-top: 5px;
-  color: #94929283;
+  color: #cecbcb83;
 }
 .div_priority_task_svg {
   width: 100%;
