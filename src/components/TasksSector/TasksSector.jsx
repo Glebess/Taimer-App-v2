@@ -12,9 +12,6 @@ const TasksSector = (props) => {
 
   const [newPriorityTask, setNewPriorityTask] = useState("base");
   const [onShowNewTaskPanel, setOnShowNewTaskPanel] = useState(false);
-  {
-    console.log(allTasks);
-  }
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
   const handleClickAddTaskPanel = () => {
