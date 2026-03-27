@@ -90,7 +90,15 @@
     cursor: pointer;
   }
 }
-
+.div_task_input_checkbox.small {
+  border-color: #023cf8;
+}
+.div_task_input_checkbox.normal {
+  border-color: #c5c543;
+}
+.div_task_input_checkbox.high {
+  border-color: #b92020;
+}
 .div_task_input_checkbox::after {
   content: "";
   position: absolute;
@@ -154,4 +162,7 @@
   margin: 0;
   color: var(--main-gray2);
   font-size: 16px;
+}
+.span_info_count_task {
+  color: #7070705e;
 }
