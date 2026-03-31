@@ -13,7 +13,7 @@
   padding-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
 .div_line {
   background-color: var(--main-gray);
@@ -64,18 +64,22 @@
 .div_bottom_panel {
   display: flex;
   flex-direction: column;
-  gap: 2.5px;
+
+  padding-left: 5px;
+  padding-right: 5px;
 }
-.div_bottom_panel div {
+.div_bottom_panel button {
   display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0;
   padding-left: 10px;
   padding-right: 10px;
-  align-items: center;
 }
 .div_bottom_panel svg {
-  width: 24px;
-  height: 24px;
-  margin-right: 2.5px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .div_bottom_panel path {

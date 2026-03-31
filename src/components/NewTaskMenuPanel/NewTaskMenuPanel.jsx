@@ -21,15 +21,15 @@ const NewTaskMenuPanel = (props) => {
                 className={getButtonClass("high")}
                 children={
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28px"
-                    height="28px"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      fill="#ff0202"
-                      d="M14.816 19q-2.935 0-4.972-2.037t-2.036-4.971q0-2.913 2.037-4.953Q11.88 5 14.816 5q2.913 0 4.952 2.04t2.04 4.952q0 2.934-2.04 4.971T14.816 19m-.008-1q2.5 0 4.25-1.75t1.75-4.25t-1.75-4.25T14.808 6t-4.25 1.75T8.808 12t1.75 4.25t4.25 1.75m2.467-2.794l.714-.714l-2.681-2.68V8.308h-1v3.906zM3.192 8.5v-1h3.616v1zm-1 4v-1h4.616v1zm1 4v-1h3.616v1zM14.808 12"
-                    />
+                    <rect x="4" y="4" width="4" height="16" fill="#ff0202" />
+                    <rect x="10" y="8" width="4" height="12" fill="#ff0202" />
+                    <rect x="16" y="12" width="4" height="8" fill="#ff0202" />
                   </svg>
                 }
               />
@@ -38,15 +38,15 @@ const NewTaskMenuPanel = (props) => {
                 className={getButtonClass("normal")}
                 children={
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28px"
-                    height="28px"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      fill="#fbff00"
-                      d="M14.816 19q-2.935 0-4.972-2.037t-2.036-4.971q0-2.913 2.037-4.953Q11.88 5 14.816 5q2.913 0 4.952 2.04t2.04 4.952q0 2.934-2.04 4.971T14.816 19m-.008-1q2.5 0 4.25-1.75t1.75-4.25t-1.75-4.25T14.808 6t-4.25 1.75T8.808 12t1.75 4.25t4.25 1.75m2.467-2.794l.714-.714l-2.681-2.68V8.308h-1v3.906zM3.192 8.5v-1h3.616v1zm-1 4v-1h4.616v1zm1 4v-1h3.616v1zM14.808 12"
-                    />
+                    <rect x="4" y="4" width="4" height="16" fill="#fbff00" />
+                    <rect x="10" y="8" width="4" height="12" fill="#fbff00" />
+                    <rect x="16" y="12" width="4" height="8" fill="grey" />
                   </svg>
                 }
               />
@@ -55,15 +55,15 @@ const NewTaskMenuPanel = (props) => {
                 className={getButtonClass("small")}
                 children={
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28px"
-                    height="28px"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      fill="#0066ff"
-                      d="M14.816 19q-2.935 0-4.972-2.037t-2.036-4.971q0-2.913 2.037-4.953Q11.88 5 14.816 5q2.913 0 4.952 2.04t2.04 4.952q0 2.934-2.04 4.971T14.816 19m-.008-1q2.5 0 4.25-1.75t1.75-4.25t-1.75-4.25T14.808 6t-4.25 1.75T8.808 12t1.75 4.25t4.25 1.75m2.467-2.794l.714-.714l-2.681-2.68V8.308h-1v3.906zM3.192 8.5v-1h3.616v1zm-1 4v-1h4.616v1zm1 4v-1h3.616v1zM14.808 12"
-                    />
+                    <rect x="4" y="4" width="4" height="16" fill="#0066ff" />
+                    <rect x="10" y="8" width="4" height="12" fill="grey" />
+                    <rect x="16" y="12" width="4" height="8" fill="grey" />
                   </svg>
                 }
               />
@@ -73,15 +73,15 @@ const NewTaskMenuPanel = (props) => {
                 className={getButtonClass("base")}
                 children={
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28px"
-                    height="28px"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      fill="#FFFFFF"
-                      d="M14.816 19q-2.935 0-4.972-2.037t-2.036-4.971q0-2.913 2.037-4.953Q11.88 5 14.816 5q2.913 0 4.952 2.04t2.04 4.952q0 2.934-2.04 4.971T14.816 19m-.008-1q2.5 0 4.25-1.75t1.75-4.25t-1.75-4.25T14.808 6t-4.25 1.75T8.808 12t1.75 4.25t4.25 1.75m2.467-2.794l.714-.714l-2.681-2.68V8.308h-1v3.906zM3.192 8.5v-1h3.616v1zm-1 4v-1h4.616v1zm1 4v-1h3.616v1zM14.808 12"
-                    />
+                    <rect x="4" y="4" width="4" height="16" fill="grey" />
+                    <rect x="10" y="8" width="4" height="12" fill="grey" />
+                    <rect x="16" y="12" width="4" height="8" fill="grey" />
                   </svg>
                 }
               />

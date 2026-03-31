@@ -14,15 +14,15 @@ const TaskSettingsModal = (props) => {
                 onClick={() => handleEditPriorityTask(taskId, "high")}
                 children={
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28px"
-                    height="28px"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      fill="#ff0202"
-                      d="M14.816 19q-2.935 0-4.972-2.037t-2.036-4.971q0-2.913 2.037-4.953Q11.88 5 14.816 5q2.913 0 4.952 2.04t2.04 4.952q0 2.934-2.04 4.971T14.816 19m-.008-1q2.5 0 4.25-1.75t1.75-4.25t-1.75-4.25T14.808 6t-4.25 1.75T8.808 12t1.75 4.25t4.25 1.75m2.467-2.794l.714-.714l-2.681-2.68V8.308h-1v3.906zM3.192 8.5v-1h3.616v1zm-1 4v-1h4.616v1zm1 4v-1h3.616v1zM14.808 12"
-                    />
+                    <rect x="4" y="4" width="4" height="16" fill="#ff0202" />
+                    <rect x="10" y="8" width="4" height="12" fill="#ff0202" />
+                    <rect x="16" y="12" width="4" height="8" fill="#ff0202" />
                   </svg>
                 }
               />
@@ -30,15 +30,15 @@ const TaskSettingsModal = (props) => {
                 onClick={() => handleEditPriorityTask(taskId, "normal")}
                 children={
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28px"
-                    height="28px"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      fill="#fbff00"
-                      d="M14.816 19q-2.935 0-4.972-2.037t-2.036-4.971q0-2.913 2.037-4.953Q11.88 5 14.816 5q2.913 0 4.952 2.04t2.04 4.952q0 2.934-2.04 4.971T14.816 19m-.008-1q2.5 0 4.25-1.75t1.75-4.25t-1.75-4.25T14.808 6t-4.25 1.75T8.808 12t1.75 4.25t4.25 1.75m2.467-2.794l.714-.714l-2.681-2.68V8.308h-1v3.906zM3.192 8.5v-1h3.616v1zm-1 4v-1h4.616v1zm1 4v-1h3.616v1zM14.808 12"
-                    />
+                    <rect x="4" y="4" width="4" height="16" fill="#fbff00" />
+                    <rect x="10" y="8" width="4" height="12" fill="#fbff00" />
+                    <rect x="16" y="12" width="4" height="8" fill="grey" />
                   </svg>
                 }
               />
@@ -46,15 +46,15 @@ const TaskSettingsModal = (props) => {
                 onClick={() => handleEditPriorityTask(taskId, "small")}
                 children={
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28px"
-                    height="28px"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      fill="#0066ff"
-                      d="M14.816 19q-2.935 0-4.972-2.037t-2.036-4.971q0-2.913 2.037-4.953Q11.88 5 14.816 5q2.913 0 4.952 2.04t2.04 4.952q0 2.934-2.04 4.971T14.816 19m-.008-1q2.5 0 4.25-1.75t1.75-4.25t-1.75-4.25T14.808 6t-4.25 1.75T8.808 12t1.75 4.25t4.25 1.75m2.467-2.794l.714-.714l-2.681-2.68V8.308h-1v3.906zM3.192 8.5v-1h3.616v1zm-1 4v-1h4.616v1zm1 4v-1h3.616v1zM14.808 12"
-                    />
+                    <rect x="4" y="4" width="4" height="16" fill="#0066ff" />
+                    <rect x="10" y="8" width="4" height="12" fill="grey" />
+                    <rect x="16" y="12" width="4" height="8" fill="grey" />
                   </svg>
                 }
               />
@@ -63,15 +63,15 @@ const TaskSettingsModal = (props) => {
                 onClick={() => handleEditPriorityTask(taskId, "base")}
                 children={
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28px"
-                    height="28px"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      fill="#FFFFFF"
-                      d="M14.816 19q-2.935 0-4.972-2.037t-2.036-4.971q0-2.913 2.037-4.953Q11.88 5 14.816 5q2.913 0 4.952 2.04t2.04 4.952q0 2.934-2.04 4.971T14.816 19m-.008-1q2.5 0 4.25-1.75t1.75-4.25t-1.75-4.25T14.808 6t-4.25 1.75T8.808 12t1.75 4.25t4.25 1.75m2.467-2.794l.714-.714l-2.681-2.68V8.308h-1v3.906zM3.192 8.5v-1h3.616v1zm-1 4v-1h4.616v1zm1 4v-1h3.616v1zM14.808 12"
-                    />
+                    <rect x="4" y="4" width="4" height="16" fill="grey" />
+                    <rect x="10" y="8" width="4" height="12" fill="grey" />
+                    <rect x="16" y="12" width="4" height="8" fill="grey" />
                   </svg>
                 }
               />
@@ -81,35 +81,38 @@ const TaskSettingsModal = (props) => {
             </div>
             <div className={styles.div_line}></div>
             <div className={styles.div_bottom_panel}>
-              <div>
+              <button>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+                    d="M16 12V4H17V2H7V4H8V12L6 14V16H11V21L12 22L13 21V16H18V14L16 12Z"
                     fill="currentColor"
-                    d="M14 12.41V5h1V4H8v1h1v7.41l-2 2V15h9v-.59zM17 14v2h-5v4.5l-.5 1.5l-.5-1.5V16H6v-2l2-2V6H7V3h9v3h-1v6z"
                   />
                 </svg>
                 <p>Закрепить</p>
-              </div>
-              <div>
+              </button>
+              <button>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
+                  <path d="M19 14H22V6H19V14Z" fill="currentColor" />
                   <path
+                    d="M15 14L12 22H10V14L6 12V4H14L17 6V14H15Z"
                     fill="currentColor"
-                    d="m8.054 16.673l-.727-.727L11.273 12L7.327 8.079l.727-.727L12 11.298l3.921-3.946l.727.727L12.702 12l3.946 3.946l-.727.727L12 12.727z"
                   />
                 </svg>
                 <p>Не буду делать</p>
-              </div>
-              <div>
+              </button>
+              {/* <button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -118,11 +121,25 @@ const TaskSettingsModal = (props) => {
                 >
                   <path
                     fill="currentColor"
-                    d="M7.616 20q-.667 0-1.141-.475T6 18.386V6h-.5q-.213 0-.356-.144T5 5.499t.144-.356T5.5 5H9q0-.31.23-.54t.54-.23h4.46q.31 0 .54.23T15 5h3.5q.213 0 .356.144t.144.357t-.144.356T18.5 6H18v12.385q0 .666-.475 1.14t-1.14.475zM17 6H7v12.385q0 .269.173.442t.443.173h8.769q.269 0 .442-.173t.173-.442zm-6.335 10.856q.143-.144.143-.356v-8q0-.213-.144-.356T10.307 8t-.356.144t-.143.356v8q0 .213.144.356q.144.144.356.144q.213 0 .357-.144m3.384 0q.143-.144.143-.356v-8q0-.213-.144-.356Q13.904 8 13.692 8q-.213 0-.357.144t-.143.356v8q0 .213.144.356t.357.144t.356-.144M7 6v13z"
+                    d="M5.5 7A1.5 1.5 0 0 1 4 5.5A1.5 1.5 0 0 1 5.5 4A1.5 1.5 0 0 1 7 5.5A1.5 1.5 0 0 1 5.5 7m15.91 4.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.11 0-2 .89-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41c0-.56-.23-1.06-.59-1.42"
+                  />
+                </svg>
+                <p>Метки</p>
+              </button> */}
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"
                   />
                 </svg>
                 <p>Удалить</p>
-              </div>
+              </button>
             </div>
           </div>
         </div>
