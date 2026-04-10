@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header";
 
 import styles from "./App.module.css";
-import TasksSector from "./components/TasksSector/TasksSector";
+import Todo from "./components/Todo/Todo";
 import { useEffect, useState } from "react";
 
 // {
@@ -31,7 +31,7 @@ function App() {
       <Header />
       <div className={styles.taimer_div}>
         <div className={styles.taimer}>
-          <TasksSector allTasks={allTasks} setAllTasks={setAllTasks} />
+          <Todo allTasks={allTasks} setAllTasks={setAllTasks} />
         </div>
       </div>
     </div>

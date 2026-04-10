@@ -1,21 +1,20 @@
-import Button from "../../componentsShare/Button.JSX";
-import Field from "../../componentsShare/Field";
+import Button from "../../../componentsShare/Button";
+import Field from "../../../componentsShare/Field";
 
-import styles from "./TasksSector.module.css";
-import NewTaskMenuPanel from "../NewTaskMenuPanel/NewTaskMenuPanel";
-
+import styles from "./NewTaskPanel.module.css";
 import { useState } from "react";
-import TaskList from "../TaskList/TaskList";
 
-const TasksSector = (props) => {
+import NewTaskSettings from "./NewTaskSettings";
+
+const NewTaskPanel = (props) => {
   const { allTasks, setAllTasks } = props;
 
   const [newPriorityTask, setNewPriorityTask] = useState("base");
-  const [onShowNewTaskPanel, setOnShowNewTaskPanel] = useState(false);
+  const [onShowNewTaskSettings, setOnShowNewTaskSettings] = useState(false);
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
   const handleClickAddTaskPanel = () => {
-    setOnShowNewTaskPanel(!onShowNewTaskPanel);
+    setOnShowNewTaskSettings(!onShowNewTaskSettings);
   };
 
   const handleNewTask = () => {
@@ -31,7 +30,7 @@ const TasksSector = (props) => {
 
       setAllTasks([...allTasks, newTask]);
       setNewTaskTitle("");
-      setOnShowNewTaskPanel(false);
+      setOnShowNewTaskSettings(false);
     }
   };
 
@@ -61,9 +60,8 @@ const TasksSector = (props) => {
                 </svg>
               }
             />
-
-            <NewTaskMenuPanel
-              onShowNewTaskPanel={onShowNewTaskPanel}
+            <NewTaskSettings
+              onShowNewTaskSettings={onShowNewTaskSettings}
               setNewPriorityTask={setNewPriorityTask}
               newPriorityTask={newPriorityTask}
             />
@@ -77,13 +75,7 @@ const TasksSector = (props) => {
           />
         </div>
       </div>
-      <TaskList
-        allTasks={allTasks}
-        setAllTasks={setAllTasks}
-        setNewPriorityTask={setNewPriorityTask}
-        newPriorityTask={newPriorityTask}
-      />
     </div>
   );
 };
-export default TasksSector;
+export default NewTaskPanel;
