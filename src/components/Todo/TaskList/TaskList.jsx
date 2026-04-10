@@ -2,7 +2,6 @@ import styles from "./TaskList.module.css";
 import TaskItem from "./TaskItem";
 import EmptyTaskList from "./EmptyTaskList";
 import CompletedTasksSection from "./CompletedTasksSection";
-import TaskSection from "./TaskSection";
 import { useTasks } from "..//..//hooks//useTasks";
 
 const TaskList = ({ allTasks, setAllTasks }) => {
@@ -46,13 +45,8 @@ const TaskList = ({ allTasks, setAllTasks }) => {
 
   return (
     <div className={styles.div_task_all}>
-      {/* активные задачи */}
-      <TaskSection
-        title="Активные задачи"
-        count={activeTasks.length}
-        tasks={activeTasks}
-        renderTask={renderTask}
-      />
+      {activeTasks.map(renderTask)}
+
       {/* Выполенные задачи */}
       <CompletedTasksSection tasks={completedTasks} renderTask={renderTask} />
     </div>

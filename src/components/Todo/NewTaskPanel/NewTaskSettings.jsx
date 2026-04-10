@@ -11,10 +11,10 @@ const NewTaskSettings = ({
   if (!onShowNewTaskSettings) return null;
 
   return (
-    <div className={styles.div_new_task_panel}>
-      <div className={styles.div_priority_task}>
+    <div className={styles.div_settings_task_container}>
+      <div className={styles.div_settings_task}>
         <p>Приоритет</p>
-        <div className={styles.div_priority_task_svg}>
+        <div className={styles.div_settings_task_svg}>
           {priorities.map(({ id, colors }) => (
             <Button
               key={id}

@@ -1,0 +1,74 @@
+.div_new_task_panel_container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.field_new_task_panel {
+  border: 1px solid var(--main-gray2);
+  border-radius: 10px;
+  background-color: transparent;
+  width: 25%;
+  color: white;
+  padding-left: 5px;
+}
+.field_new_task_panel:focus {
+  border-color: aqua;
+}
+
+.button_new_task {
+  border: 1px solid var(--main-gray2);
+  color: white;
+  background-color: transparent;
+  border-radius: 10px;
+}
+.button_new_task:disabled {
+  color: var(--main-gray2);
+  border: 1px solid var(--main-gray2);
+}
+
+.field_new_task_panel:focus {
+  border-color: 1px solid blue;
+}
+
+.button_new_task_settings {
+  background-color: transparent;
+  position: relative;
+  outline: 0;
+  border: 0;
+}
+.button_new_task_settings:hover {
+  cursor: pointer;
+}
+.div_settings_task_container {
+  position: absolute;
+  margin-top: 5px;
+  width: 200px;
+  height: 75px;
+  background-color: var(--main-black);
+  border: 0.25px solid var(--main-gray);
+  border-radius: 10px;
+}
+.div_settings_task {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.div_settings_task p {
+  margin: 0;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+}
+.div_settings_task_svg {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.div_settings_task_svg button {
+  background-color: transparent;
+  border: 0;
+}
+.div_settings_task_svg button:hover {
+  cursor: pointer;
+}
