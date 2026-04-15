@@ -40,6 +40,24 @@ export const useTasks = (allTasks, setAllTasks) => {
     [setAllTasks],
   );
 
+  // Закрепить задачу
+  const togglePinTask = (taskId) => {
+    setAllTasks((prev) =>
+      prev.map((task) =>
+        task.taskId === taskId ? { ...task, Ispinned: !task.Ispinned } : task,
+      ),
+    );
+  };
+
+  //Удалить задачу
+  const handleDeleteTask = (taskId) => {
+    setAllTasks((prev) =>
+      prev.filter((task) =>
+        task.taskId === taskId ? { ...task, Ispinned: !task.Ispinned } : task,
+      ),
+    );
+  };
+
   //  Приоритет
   const changeTaskPriority = useCallback(
     (taskId, priority) => {
@@ -74,6 +92,8 @@ export const useTasks = (allTasks, setAllTasks) => {
     completedTasks,
     editingTaskId,
     taskEditText,
+    handleDeleteTask,
+    togglePinTask,
     setTaskEditText,
     startEditTask,
     saveEditTask,

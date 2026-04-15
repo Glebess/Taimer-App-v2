@@ -17,15 +17,23 @@ const NewTaskPanel = (props) => {
     setOnShowNewTaskSettings(!onShowNewTaskSettings);
   };
 
+  const keyNewTaskDown = (e) => {
+    if (e.key === "Enter") {
+      handleNewTask();
+    }
+  };
+
   const handleNewTask = () => {
     if (newTaskTitle.trim() === "") {
-      alert("Поле задачи не может быть пустым!");
+      return null;
     } else {
       const newTask = {
         taskId: Date.now(),
         taskTitle: newTaskTitle,
         taskPriority: newPriorityTask,
         taskCompleted: false,
+        taskTags: [],
+        isPinned: false,
       };
 
       setAllTasks([...allTasks, newTask]);
@@ -38,9 +46,10 @@ const NewTaskPanel = (props) => {
     <div className={styles.div_new_task_panel_container}>
       <Field
         className={styles.field_new_task_panel}
-        placeHolder={"+ Создать задачу"}
+        placeHolder={"+ Добавить задачу"}
         value={newTaskTitle}
         onChange={(e) => setNewTaskTitle(e.target.value)}
+        onKeyDown={keyNewTaskDown}
       />
       <div className={styles.div_add_task_more}>
         <Button
@@ -66,7 +75,7 @@ const NewTaskPanel = (props) => {
       </div>
       <Button
         disabled={newTaskTitle.length === 0}
-        children={"Создать"}
+        children={"Добавить"}
         className={styles.button_new_task}
         onClick={handleNewTask}
         title={!newTaskTitle.trim() ? "Поле задачи пустое" : ""}

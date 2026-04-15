@@ -33,23 +33,9 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #f8f8f8;
-  /* animation-name: taskcompleted;
-  animation-duration: 800ms; */
-  /* transform: scaleX(0); */
   transform-origin: center;
   border-radius: 10px;
 }
-/* @keyframes taskcompleted {
-  from {
-    transform: scaleX(0);
-    opacity: 1;
-  }
-  to {
-    transform: scaleX(1);
-    opacity: 0;
-  }
-} */
 .div_task_text {
   display: flex;
   align-items: center;
@@ -62,6 +48,12 @@
 }
 .p_title_task {
   color: white;
+  margin: 0;
+  font-size: 16px;
+}
+.div_completed_task p {
+  color: var(--main-gray);
+
   margin: 0;
   font-size: 16px;
 }
@@ -90,6 +82,9 @@
     cursor: pointer;
   }
 }
+.div_task_input_checkbox.complate {
+  border: 1.75px solid var(--main-gray);
+}
 .div_task_input_checkbox.small {
   border-color: #023cf8;
 }
@@ -102,17 +97,13 @@
 .div_task_input_checkbox::after {
   content: "";
   position: absolute;
-  width: 17px;
-  height: 17px;
+  width: 100%;
+  height: 100%;
   font-size: 26px;
-  border-radius: 5px;
-  transform: scale(0);
-  transition: 0.15s;
+  border-radius: 2.5px;
 }
 .div_task_input_checkbox:checked::after {
-  background-color: white;
-  transform: scale(1);
-  transition: transform 0.2s ease-in-out;
+  background-color: var(--main-gray);
 }
 .div_task_more {
   position: relative;

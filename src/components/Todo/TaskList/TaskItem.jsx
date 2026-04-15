@@ -45,7 +45,11 @@ const TaskItem = ({
     >
       <input
         type="checkbox"
-        className={`${styles.div_task_input_checkbox} ${styles[task.taskPriority]}`}
+        className={
+          task.taskIsCompleted
+            ? `${styles.div_task_input_checkbox} ${styles.div_task_input_checkbox.complate}`
+            : `${styles.div_task_input_checkbox} ${styles[task.taskPriority]}`
+        }
         checked={task.taskIsCompleted}
         onChange={() => onToggleComplete(task.taskId)}
       />

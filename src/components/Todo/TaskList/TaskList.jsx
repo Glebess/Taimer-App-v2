@@ -46,7 +46,6 @@ const TaskList = ({ allTasks, setAllTasks }) => {
   return (
     <div className={styles.div_task_all}>
       {activeTasks.map(renderTask)}
-
       {/* Выполенные задачи */}
       <CompletedTasksSection tasks={completedTasks} renderTask={renderTask} />
     </div>

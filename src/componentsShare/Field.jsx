@@ -1,5 +1,6 @@
 const Field = (props) => {
-  const { placeHolder, className, name, id, onChange, value } = props;
+  const { placeHolder, className, name, id, onChange, value, onKeyDown } =
+    props;
   return (
     <input
       className={className}
@@ -8,6 +9,7 @@ const Field = (props) => {
       id={id}
       onChange={onChange}
       value={value}
+      onKeyDown={onKeyDown}
     ></input>
   );
 };
