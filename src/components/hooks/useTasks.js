@@ -44,7 +44,7 @@ export const useTasks = (allTasks, setAllTasks) => {
   const togglePinTask = (taskId) => {
     setAllTasks((prev) =>
       prev.map((task) =>
-        task.taskId === taskId ? { ...task, Ispinned: !task.Ispinned } : task,
+        task.taskId === taskId ? { ...task, isPinned: !task.isPinned } : task,
       ),
     );
   };
@@ -53,7 +53,7 @@ export const useTasks = (allTasks, setAllTasks) => {
   const handleDeleteTask = (taskId) => {
     setAllTasks((prev) =>
       prev.filter((task) =>
-        task.taskId === taskId ? { ...task, Ispinned: !task.Ispinned } : task,
+        task.taskId === taskId ? { ...task, ispinned: !task.ispinned } : task,
       ),
     );
   };

@@ -13,7 +13,7 @@ const TaskItem = ({
   onStartEdit,
   onToggleComplete,
   onChangePriority,
-  onPin,
+  togglePinTask,
   onSkip,
   onDelete,
   onTag,
@@ -97,8 +97,8 @@ const TaskItem = ({
           onDelete={() => {
             onDelete(task.taskId);
           }}
-          onPin={() => {
-            onPin(task.taskId);
+          togglePinTask={() => {
+            togglePinTask(task.taskId);
           }}
           onSkip={() => {
             onSkip(task.taskId);

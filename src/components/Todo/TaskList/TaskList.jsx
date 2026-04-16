@@ -16,12 +16,12 @@ const TaskList = ({ allTasks, setAllTasks }) => {
     cancelEditTask,
     toggleTaskComplete,
     changeTaskPriority,
-    pinTask,
+    togglePinTask,
     skipTask,
     deleteTask,
   } = useTasks(allTasks, setAllTasks);
 
-  if (activeTasks.length === 0 && completedTasks.length === 0) {
+  if ((activeTasks.length === 0) & (completedTasks.length === 0)) {
     return <EmptyTaskList />;
   }
 
@@ -37,7 +37,7 @@ const TaskList = ({ allTasks, setAllTasks }) => {
       onStartEdit={startEditTask}
       onToggleComplete={toggleTaskComplete}
       onChangePriority={changeTaskPriority}
-      onPin={pinTask}
+      togglePinTask={togglePinTask}
       onSkip={skipTask}
       onDelete={deleteTask}
     />
@@ -46,7 +46,6 @@ const TaskList = ({ allTasks, setAllTasks }) => {
   return (
     <div className={styles.div_task_all}>
       {activeTasks.map(renderTask)}
-      {/* Выполенные задачи */}
       <CompletedTasksSection tasks={completedTasks} renderTask={renderTask} />
     </div>
   );

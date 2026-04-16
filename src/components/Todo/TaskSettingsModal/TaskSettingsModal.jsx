@@ -10,7 +10,7 @@ const TaskSettingsModal = ({
   handleEditPriorityTask,
   taskId,
   onDelete,
-  onPin,
+  togglePinTask,
   onSkip,
   onTag,
 }) => {
@@ -49,7 +49,7 @@ const TaskSettingsModal = ({
         <div className={styles.div_bottom_panel}>
           <button
             onClick={() => {
-              onPin();
+              togglePinTask();
               setIsSettingsOpen(false);
             }}
           >

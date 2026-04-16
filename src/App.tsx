@@ -4,12 +4,6 @@ import styles from "./App.module.css";
 import Todo from "./components/Todo/Todo";
 import { useEffect, useState } from "react";
 
-// {
-//         taskId: Date.now,
-//         taskTitle: "Образец задачи",
-//         taskPriority: "base", // high, normal , small
-//         taskIsСompleted: false,
-//       },
 function App() {
   const [allTasks, setAllTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");

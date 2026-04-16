@@ -53,7 +53,6 @@
 }
 .div_completed_task p {
   color: var(--main-gray);
-
   margin: 0;
   font-size: 16px;
 }
