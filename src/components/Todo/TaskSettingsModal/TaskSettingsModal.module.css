@@ -50,7 +50,7 @@
     background-color: #ffffff0a;
   }
 }
-.div_modal_contentbutton.active {
+.div_modal_content button.active {
   background-color: #0d0d0e54;
 }
 
@@ -77,6 +77,16 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.div_bottom_panel .delete_button:hover {
+  background-color: #ff000015;
+}
+.div_bottom_panel .delete_button:hover p,
+.div_bottom_panel .delete_button:hover path {
+  color: red;
+  fill: red;
+}
+
 .div_bottom_panel svg {
   width: 20px;
   height: 20px;

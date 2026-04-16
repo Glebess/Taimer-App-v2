@@ -17,8 +17,7 @@ const TaskList = ({ allTasks, setAllTasks }) => {
     toggleTaskComplete,
     changeTaskPriority,
     togglePinTask,
-    skipTask,
-    deleteTask,
+    handleDeleteTask,
   } = useTasks(allTasks, setAllTasks);
 
   if ((activeTasks.length === 0) & (completedTasks.length === 0)) {
@@ -38,8 +37,7 @@ const TaskList = ({ allTasks, setAllTasks }) => {
       onToggleComplete={toggleTaskComplete}
       onChangePriority={changeTaskPriority}
       togglePinTask={togglePinTask}
-      onSkip={skipTask}
-      onDelete={deleteTask}
+      handleDeleteTask={handleDeleteTask}
     />
   );
 

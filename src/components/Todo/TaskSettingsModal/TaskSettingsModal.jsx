@@ -2,28 +2,20 @@ import styles from "./TaskSettingsModal.module.css";
 import Button from "../../../componentsShare/Button";
 import priorities from "../../Configs/Config";
 import { PriorityIcon } from "../../Configs/Icon";
-import { useRef } from "react";
 
 const TaskSettingsModal = ({
   isSettingsOpen,
   setIsSettingsOpen,
   handleEditPriorityTask,
   taskId,
-  onDelete,
+  handleDeleteTask,
   togglePinTask,
-  onSkip,
   onTag,
 }) => {
   if (!isSettingsOpen) return null;
 
-  const handleOverlayClick = (e) => {
-    if (!e.currentTarget.contains(e.target)) {
-      setIsSettingsOpen(false);
-    }
-  };
-
-  // Типы иконок календаря
-  const calendarTypes = ["default", "arrow", "dots", "search"];
+  // // Типы иконок календаря
+  // const calendarTypes = ["default", "arrow", "dots", "search"];
 
   return (
     <div className={styles.div_modal_container}>
@@ -64,22 +56,6 @@ const TaskSettingsModal = ({
 
           <button
             onClick={() => {
-              onSkip();
-              setIsSettingsOpen(false);
-            }}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M19 14H22V6H19V14Z" fill="currentColor" />
-              <path
-                d="M15 14L12 22H10V14L6 12V4H14L17 6V14H15Z"
-                fill="currentColor"
-              />
-            </svg>
-            <p>Не буду делать</p>
-          </button>
-
-          <button
-            onClick={() => {
               onTag();
               setIsSettingsOpen(false);
             }}
@@ -94,8 +70,9 @@ const TaskSettingsModal = ({
           </button>
 
           <button
+            className={styles.delete_button}
             onClick={() => {
-              onDelete();
+              handleDeleteTask();
               setIsSettingsOpen(false);
             }}
           >

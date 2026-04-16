@@ -50,13 +50,15 @@ export const useTasks = (allTasks, setAllTasks) => {
   };
 
   //Удалить задачу
-  const handleDeleteTask = (taskId) => {
-    setAllTasks((prev) =>
-      prev.filter((task) =>
-        task.taskId === taskId ? { ...task, ispinned: !task.ispinned } : task,
-      ),
-    );
-  };
+  const handleDeleteTask = useCallback(
+    (taskId) => {
+      setAllTasks((prev) => {
+        const newTasks = prev.filter((task) => task.taskId !== taskId);
+        return newTasks;
+      });
+    },
+    [setAllTasks],
+  );
 
   //  Приоритет
   const changeTaskPriority = useCallback(

@@ -14,8 +14,7 @@ const TaskItem = ({
   onToggleComplete,
   onChangePriority,
   togglePinTask,
-  onSkip,
-  onDelete,
+  handleDeleteTask,
   onTag,
 }) => {
   const inputRef = useRef(null);
@@ -94,14 +93,11 @@ const TaskItem = ({
           setIsSettingsOpen={setIsSettingsOpen}
           handleEditPriorityTask={onChangePriority}
           taskId={task.taskId}
-          onDelete={() => {
-            onDelete(task.taskId);
+          handleDeleteTask={() => {
+            handleDeleteTask(task.taskId);
           }}
           togglePinTask={() => {
             togglePinTask(task.taskId);
-          }}
-          onSkip={() => {
-            onSkip(task.taskId);
           }}
           onTag={() => {
             onTag(task.taskId);
